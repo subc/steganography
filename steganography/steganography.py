@@ -190,10 +190,11 @@ def print_help_text():
     print("ERROR: not steganography command")
     print("--------------------------------")
     print("# encode example: hide text to image")
-    print("steganography -e '/tmp/image/a.jpg' '/tmp/image/b.jpg' 'The quick brown fox jumps over the lazy dog.'")
+    print("steganography -e /tmp/image/a.jpg /tmp/image/b.jpg 'The quick brown fox jumps over the lazy dog.'")
     print("")
     print("# decode example: read secret text from image")
-    print("steganography -d '/tmp/image/b.jpg'")
+    print("steganography -d /tmp/image/b.jpg")
+    print("")
 
 if __name__ == "__main__":
     main()
