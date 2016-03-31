@@ -13,6 +13,14 @@ Installation
     $ pip install steganography
 
 
+Example Image
+-----------------
+
+.. image:: http://subc.github.io/image/pypi/steganography.png
+    :alt: HTTPie compared to cURL
+    :align: center
+
+
 Sample Command
 -----------------
 
@@ -48,4 +56,4 @@ Documentation
 
 - 日本語ドキュメント: `Japanese Document`_
 
-.. _`Japanese Document`: http://qiita.com/haminiku/items/bcf4bac82bd1ca62c746
+.. _`Japanese Document`: http://qiita.com/haminiku/items/2e623caab751f25a382e
