@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
 
+import sys
 from PIL import Image
 import random
 
@@ -96,12 +97,9 @@ def hide_text(path, text):
     # 画像書き込み用データの生成
     write_param = []
     _base = 0
-    print(to_hex(text))
     for _ in to_hex(text):
         write_param.append(int(_, 16) + _base)
         _base += 16
-
-    print(write_param)
 
     # 画像を読んで分割する
     img = Image.open(path)
@@ -167,3 +165,35 @@ class Steganography(object):
         :return: str
         """
         return read_text(image_path)
+
+
+# Main program
+def main():
+    if len(sys.argv) == 5 and sys.argv[1] == '-e':
+        # encode
+        print("Start Encode")
+        input_image_path = sys.argv[2]
+        output_image_path = sys.argv[3]
+        text = sys.argv[4]
+        Steganography.encode(input_image_path, output_image_path, text)
+        print("Finish:{}".format(output_image_path))
+        return
+    if len(sys.argv) == 3 and sys.argv[1] == '-d':
+        # decode
+        input_image_path = sys.argv[2]
+        print(Steganography.decode(input_image_path))
+        return
+    print_help_text()
+
+
+def print_help_text():
+    print("ERROR: not steganography command")
+    print("--------------------------------")
+    print("# encode example: hide text to image")
+    print("steganography -e '/tmp/image/a.jpg' '/tmp/image/b.jpg' 'The quick brown fox jumps over the lazy dog.'")
+    print("")
+    print("# decode example: read secret text from image")
+    print("steganography -d '/tmp/image/b.jpg'")
+
+if __name__ == "__main__":
+    main()

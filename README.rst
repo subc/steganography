@@ -33,8 +33,6 @@ Sample Code
 Documentation
 -----------------
 
-- `My Number Law`_
 - 日本語ドキュメント: `Japanese Document`_
 
 .. _`Japanese Document`: http://qiita.com/haminiku/items/bcf4bac82bd1ca62c746
-.. _`My Number Law`: http://www.soumu.go.jp/main_content/000327387.pdf

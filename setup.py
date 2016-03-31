@@ -17,7 +17,7 @@ setup(
     packages=['steganography'],
     package_dir={'steganography': 'steganography'},
     include_package_data=True,
-    install_requires=[],
+    install_requires=open(os.path.join(os.path.dirname(__file__), 'requirements.txt')).read().splitlines(),
     license='MIT License',
     zip_safe=False,
     keywords=["Implementation Hide Text In Image with encryption", "stegano", "steganography",
@@ -28,5 +28,9 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
     ),
-
+    entry_points={
+        'console_scripts': [
+         'steganography = steganography.steganography:main',
+        ],
+    },
 )
