@@ -1,0 +1,11 @@
+*.pyc
+*.pyo
+*.egg
+*.DS_store
+dist
+build/
+.idea/
+venv
+sysdic
+.cache
+*.egg-info/
