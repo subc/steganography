@@ -5,6 +5,8 @@ import sys
 from PIL import Image
 import random
 
+DIST = 8
+
 
 def normalize_pixel(r, g, b):
     """
@@ -43,18 +45,18 @@ def is_modify_pixel(r, g, b):
     :param b: int
     :return: bool
     """
-    return r % 8 == g % 8 == b % 8 == 1
+    return r % DIST == g % DIST == b % DIST == 1
 
 
 def _modify(i):
     if i >= 128:
-        for x in xrange(10):
-            if i % 8 == 1:
+        for x in xrange(DIST + 1):
+            if i % DIST == 1:
                 return i
             i -= 1
     else:
-        for x in xrange(10):
-            if i % 8 == 1:
+        for x in xrange(DIST + 1):
+            if i % DIST == 1:
                 return i
             i += 1
     raise ValueError

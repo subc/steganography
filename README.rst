@@ -1,6 +1,6 @@
-JPG, GIF, PNG, BMP. Digital image steganography of encrypted text
+Digital image steganography of encrypted text
 ========================================================================
-
+JPG, GIF, PNG, BMP.
 
 日本語ドキュメント: `Japanese Document`_
 
