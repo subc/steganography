@@ -1,4 +1,4 @@
-Implementation Hide Text In Image with encryption
+Digital image steganography of encrypted text
 ========================================================================
 
 
@@ -19,20 +19,16 @@ Sample Code
 
     # -*- coding: utf-8 -*-
     from __future__ import absolute_import, unicode_literals
-    from mynumber import MyNumber
+    from steganography.steganography import Steganography
 
-    # Validate
-    my_number = 123456789018
-    print MyNumber.validate(my_number)
+    # hide text to image
+    path = "/tmp/image/a.jpg"
+    output_path = "/tmp/image/b.jpg"
+    text = 'The quick brown fox jumps over the lazy dog.'
+    Steganography.encode(path, output_path, text)
 
-    # Validate MyNumber. Duplicate Disable
-    for my_number in MyNumber.gets(1000):
-        assert MyNumber.validate(my_number)
-
-    # Validate MyNumber by iterator. Duplicate Enable
-    for my_number in MyNumber():
-        assert MyNumber.validate(my_number)
-
+    # read secret text from image
+    secret_text = Steganography.decode(output_path)
 
 Documentation
 -----------------

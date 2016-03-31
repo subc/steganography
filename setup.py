@@ -9,7 +9,7 @@ f.close()
 setup(
     name='steganography',
     version=__version__,
-    description="'My Number' validate module",
+    description="Digital image steganography of encrypted text",
     long_description=long_description,
     author='haminiku',
     author_email='haminiku1129@gmail.com',
@@ -20,15 +20,13 @@ setup(
     install_requires=[],
     license='MIT License',
     zip_safe=False,
-    keywords=["Implementation Hide Text In Image with encryption", "stegano", "steganography"],
+    keywords=["Implementation Hide Text In Image with encryption", "stegano", "steganography",
+              "Digital image steganography of encrypted text"],
     classifiers=(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4'
     ),
 
 )
