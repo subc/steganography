@@ -94,14 +94,14 @@ def hide_text(path, text):
     """
     text = str(text)
 
-    # 画像書き込み用データの生成
+    # convert text to hex for write
     write_param = []
     _base = 0
     for _ in to_hex(text):
         write_param.append(int(_, 16) + _base)
         _base += 16
 
-    # 画像を読んで分割する
+    # hide hex-text to image
     img = Image.open(path)
     counter = 0
     for y in range(img.size[1]):
@@ -112,7 +112,7 @@ def hide_text(path, text):
                 img.putpixel((x, y), (r, g, b))
             counter += 1
 
-    # 保存
+    # save
     img.save(path, "PNG", optimize=True)
 
 
