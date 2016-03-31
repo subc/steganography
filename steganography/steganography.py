@@ -75,6 +75,7 @@ def normalize(path, output):
     :param output: str
     """
     img = Image.open(path)
+    img = img.convert('RGB')
     size = img.size
     new_img = Image.new('RGB', size)
 
