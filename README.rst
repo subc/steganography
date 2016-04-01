@@ -27,10 +27,10 @@ Sample Command
 .. code-block:: bash
 
     # encode example: hide text to image
-    >>>steganography -e /tmp/image/a.jpg /tmp/image/b.jpg 'The quick brown fox jumps over the lazy dog.'
+    >>>steganography -e /tmp/image/input.jpg /tmp/image/output.jpg 'The quick brown fox jumps over the lazy dog.'
 
     # decode example: read secret text from image
-    >>>steganography -d /tmp/image/b.jpg
+    >>>steganography -d /tmp/image/output.jpg
     The quick brown fox jumps over the lazy dog.
 
 Sample Code
@@ -43,8 +43,8 @@ Sample Code
     from steganography.steganography import Steganography
 
     # hide text to image
-    path = "/tmp/image/a.jpg"
-    output_path = "/tmp/image/b.jpg"
+    path = "/tmp/image/input.jpg"
+    output_path = "/tmp/image/output.jpg"
     text = 'The quick brown fox jumps over the lazy dog.'
     Steganography.encode(path, output_path, text)
 
