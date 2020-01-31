@@ -4,6 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import sys
 from PIL import Image
 import random
+import binascii
 
 DIST = 8
 
@@ -50,12 +51,12 @@ def is_modify_pixel(r, g, b):
 
 def _modify(i):
     if i >= 128:
-        for x in xrange(DIST + 1):
+        for x in range(DIST + 1):
             if i % DIST == 1:
                 return i
             i -= 1
     else:
-        for x in xrange(DIST + 1):
+        for x in range(DIST + 1):
             if i % DIST == 1:
                 return i
             i += 1
@@ -118,14 +119,11 @@ def hide_text(path, text):
     # save
     img.save(path, "PNG", optimize=True)
 
-
 def to_hex(s):
-    return s.encode("hex")
-
+    return binascii.hexlify(s.encode()).decode()
 
 def to_str(s):
-    return s.decode("hex")
-
+    return binascii.unhexlify(s).decode()
 
 def read_text(path):
     """
